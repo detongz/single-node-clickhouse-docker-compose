@@ -8,7 +8,7 @@ services:
         container_name: clickhouse-server
         ports:
             - "8123:8123" #client-server communication using HTTP protocol
-            # - "9000:9000" #native client-server communication using the ClickHouse binary protocol
+            - "9000:9000" #native client-server communication using the ClickHouse binary protocol
             - "9004:9004" #MySQL port
             # - "9005:9005" #PostgreSQL port
         environment:
@@ -17,5 +17,5 @@ services:
             - ALLOW_EMPTY_PASSWORD=no
         volumes:
                 - ./data/server:/bitnami/clickhouse
-                # - ./config.xml:/bitnami/clickhouse/etc/clickhouse-server/config.xml:ro
-                # - ./users.xml:/bitnami/clickhouse/etc/clickhouse-server/users.xml:ro
+                - ./config.xml:/opt/bitnami/clickhouse/etc/config.xml:ro
+                - ./users.xml:/opt/bitnami/clickhouse/etc/users.xml:ro

@@ -8,6 +8,9 @@ Your local folder `./data` is used for clickhouse's data storage.
 
 *Supports Apple Silicon*
 
+Timezone: Asia/Shanghai
+LogLevel: INFO
+
 ## Connect to clickhouse client
 
 1. Docker compose start
